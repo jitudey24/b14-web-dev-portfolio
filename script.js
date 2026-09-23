@@ -74,3 +74,12 @@ document
     el.style.setProperty("--delay", `${(i % 6) * 70}ms`);
     revealObserver.observe(el);
   });
+
+
+// Close the mobile navigation with the Escape key.
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navLinks?.classList.contains("menu-open")) {
+    navLinks.classList.remove("menu-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+  }
+});
